@@ -7,12 +7,28 @@
  * - Naz (BluSpring).
  * - MatthewJ217.
  */
-
+const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 const {YTSearcher} = require('ytsearcher');
 const ypi = require('youtube-playlist-info');
 const Discord = require('discord.js');
 const PACKAGE = require('./package.json');
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'こんにちは') {
+    	message.reply('こんにちはです！');
+  	}
+});
+
+client.on('message', message => {
+    if (message.content === 'おはよう') {
+    	message.reply('おはようございます！');
+  	}
+});
 
 /*
  * Takes a discord.js client and turns it into a music bot.
@@ -2271,3 +2287,4 @@ exports.start = (client, options) => {
     });
   };
 };
+client.login(process.env.BOT_TOKEN);
