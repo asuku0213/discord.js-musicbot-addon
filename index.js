@@ -7,12 +7,12 @@
  * - Naz (BluSpring).
  * - MatthewJ217.
  */
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 const config = require("./config.json");
 const {YTSearcher} = require('ytsearcher');
 const ypi = require('youtube-playlist-info');
-const Discord = require('discord.js');
 const PACKAGE = require('./package.json');
 
 client.on('ready', () => {
